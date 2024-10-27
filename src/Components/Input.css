@@ -1,0 +1,39 @@
+.img{
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
+    background-size:inherit;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.input{
+    width: 50%;
+    height: 400px;
+    background-color: rgb(248, 51, 51);
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    border: 4mm ridge rgba(220, 64, 50, 0.6);
+}
+
+.output{
+    width: 50%;
+    background-color: #ffee00;
+    border: 4mm ridge rgba(211, 220, 50, .6);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.button{
+    margin-left: 10px;
+    margin-top: 20px;
+    border: 1px solid;
+    box-shadow: 5px 10px;
+}
+
+.prompt{
+    padding-top: 20px;
+}
