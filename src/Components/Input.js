@@ -52,17 +52,7 @@ export default function Input() {
         setdata("Result will appear here")
         setimage("https://via.placeholder.com/300")
         setprompt("")
-    
-        const formData = new FormData();
-        formData.append("file" , image)
 
-        const options={
-            method:"POST",
-            body:formData
-        };
-
-        const res = await fetch("http://localhost:8000/delete" ,options )
-        console.log(res,res.body)
     }
 
     const clearprompt =()=>{
