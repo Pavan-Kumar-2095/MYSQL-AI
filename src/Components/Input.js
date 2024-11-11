@@ -19,7 +19,7 @@ export default function Input() {
             body:formData
         };
 
-        const res = await fetch("https://image-recognition-chatbot-backend-2.onrender.com/upload" , options)
+        const res = await fetch("https://image-recognition-chatbot-backend.onrender.com/upload" , options)
         console.log(res,await res.json())
         
     }
@@ -43,7 +43,7 @@ export default function Input() {
             alert("select image and write the message")
         }
 
-        const res = await fetch("https://image-recognition-chatbot-backend-2.onrender.com/Analyse" , send)
+        const res = await fetch("https://image-recognition-chatbot-backend.onrender.com/Analyse" , send)
         const data = await res.text();   
         setdata(data)
     }
