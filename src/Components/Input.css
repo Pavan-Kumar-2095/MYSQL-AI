@@ -34,7 +34,7 @@
     box-shadow: 5px 5px;
 }
 
-button:active  {
+.button:active  {
     background-color: #45a049;  /* Darker color on click */
 }
 
