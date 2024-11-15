@@ -43,6 +43,8 @@ export default function Input() {
             alert("select image and write the message")
         }
 
+        setdata("Loading...");
+        
         const res = await fetch("https://image-recognition-chatbot-backend.onrender.com/Analyse" , send)
         const data = await res.text();   
         setdata(data)

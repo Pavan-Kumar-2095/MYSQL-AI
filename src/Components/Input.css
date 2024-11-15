@@ -31,7 +31,11 @@
     margin-left: 10px;
     margin-top: 20px;
     border: 1px solid;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 5px;
+}
+
+button:active  {
+    background-color: #45a049;  /* Darker color on click */
 }
 
 .prompt{
