@@ -1,43 +1,176 @@
-.img{
-    height: 300px;
-    width: 300px;
-    background-color: aqua;
-    background-size:inherit;
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main{
-    display: flex;
-    flex-direction: row;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #C4E0F9; /* Very Light Blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Main container */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #2EC0F9, #67AAF9); /* Gradient from Bright Sky Blue to Light Sky Blue */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+/* Input Section */
+.input {
+  width: 100%;
+  text-align: center;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 5px solid #fff; /* White border around image */
+}
+
+/* File Input */
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  font-size: 16px;
+  background-color: #fff; /* White background */
+  border: 2px solid #2EC0F9; /* Bright Sky Blue border */
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  background-color: #9BBDF9; /* Light Blue background on hover */
+}
+
+/* Prompt Input */
+.prompt input {
+  width: 100%;
+  max-width: 80%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 2px solid #2EC0F9; /* Bright Sky Blue border */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.prompt input:focus {
+  outline: none;
+  border-color: #67AAF9; /* Light Sky Blue border on focus */
+}
+
+/* Buttons */
+button {
+  background-color: #B95F89; /* Muted Pink button background */
+  color: white;
+  padding: 12px 25px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #9BBDF9; /* Light Blue background on hover */
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #67AAF9; /* Light Sky Blue when active */
+}
+
+/* Output Section */
+.output p {
+  font-size: 18px;
+  color: #212121; /* Dark Gray text for readability */
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  background-color: #fff; /* White background for output */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+  .main {
+    padding: 15px;
+  }
+
+  .img {
+    max-width: 90%;
+  }
+
+  .prompt input {
     width: 100%;
+    max-width: none;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .output p {
+    font-size: 16px;
+  }
 }
 
-.input{
-    width: 50%;
-    height: 400px;
-    background-color: rgb(248, 51, 51);
-    font-family:Arial, Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
-    border: 4mm ridge rgba(220, 64, 50, 0.6);
-}
+/* Desktop Specific Styles */
+@media (min-width: 769px) {
+  .main {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+  }
 
-.output{
-    width: 50%;
-    background-color: #ffee00;
-    border: 4mm ridge rgba(211, 220, 50, .6);
-    font-family:Arial, Helvetica, sans-serif;
-}
+  .input {
+    width: 45%;
+  }
 
-.button{
-    margin-left: 10px;
-    margin-top: 20px;
-    border: 1px solid;
-    box-shadow: 5px 5px;
-}
+  .output {
+    width: 45%;
+  }
 
-.button:active  {
-    background-color: #45a049;  /* Darker color on click */
-}
+  .img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
 
-.prompt{
-    padding-top: 20px;
+  .prompt input {
+    width: 100%;
+    max-width: none;
+  }
+
+  button {
+    width: auto;
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+
+  .output p {
+    font-size: 18px;
+  }
 }
