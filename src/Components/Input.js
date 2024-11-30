@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./Input.css"
+import Footer from "../Components/Footer"
 export default function Input() {
     const [ image , setimage ] = useState("https://via.placeholder.com/300")
     const [ prompt , setprompt ] = useState("")
@@ -78,7 +79,9 @@ export default function Input() {
 
         <div className="output">
         <p value={data}>{data}</p>
+        <Footer   className="footer" />
         </div>
+        
 
     </div>
   )
