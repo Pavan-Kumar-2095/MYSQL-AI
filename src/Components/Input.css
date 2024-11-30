@@ -115,6 +115,7 @@ button:active {
 @media (max-width: 768px) {
   .main {
     padding: 15px;
+    margin-top: 500px;
   }
 
   .img {
