@@ -31,6 +31,10 @@ export default function Input() {
         
     }
 
+    const copytoclipboard = async()=>{
+        navigator.clipboard.writeText(data);
+    }
+
     const Analyse = async()=>{
         const send={
             method:"POST",
@@ -81,6 +85,7 @@ export default function Input() {
 
         <div className="output">
         <p value={data}>{data}</p>
+        <button onClick={copytoclipboard} className="button"> COPY </button>
         <Footer   className="footer" />
         </div>
         
