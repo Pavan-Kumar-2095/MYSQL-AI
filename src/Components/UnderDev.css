@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #00ff00; /* Neon green color for Matrix effect */
+    overflow: hidden;
+    background-image: url('https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif?cid=790b7611xs0y96eq6v7i3wrtdpqsfn9xi02y8ag2u3a6ntrj&ep=v1_gifs_search&rid=giphy.gif&ct=g'); /* Add your GIF path here */
+    background-size: cover; /* Ensures the GIF covers the entire viewport */
+    background-position: center; /* Centers the GIF */
+    background-attachment: fixed; /* Keeps the GIF fixed when scrolling */
+    background-repeat: no-repeat; /* Prevents the GIF from repeating */
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.overlay {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px); /* Creates a blurred background effect */
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00ff00;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); /* Glowing effect */
+}
+
+p {
+    font-size: 1.2rem;
+    color: #00ff00;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.loader {
+    border: 6px solid #00b300;
+    border-top: 6px solid #00ff00;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.coming-soon {
+    margin-top: 30px;
+}
+
+.coming-soon p {
+    font-size: 1.2rem;
+    color: #ff6347; /* Tomato red for emphasis */
+    font-weight: 600;
+}
+
+.coming-soon strong {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Falling Matrix Effect */
+.matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.matrix span {
+    position: absolute;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    opacity: 0;
+    animation: fall 1.5s infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .overlay {
+        padding: 30px 40px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .loader {
+        width: 40px;
+        height: 40px;
+    }
+
+    .coming-soon p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 25px 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .loader {
+        width: 35px;
+        height: 35px;
+    }
+
+    .coming-soon p {
+        font-size: 0.95rem;
+    }
+}

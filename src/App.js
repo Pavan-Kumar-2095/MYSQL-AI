@@ -1,11 +1,13 @@
 import Input from "./Components/Input"
+import Update from "./Components/UnderDev"
 
 function App() {
 
 
   return (
   <div>
-    <Input/>
+     {/* <Input/> */}
+     <Update/>
   </div>
            
   );
