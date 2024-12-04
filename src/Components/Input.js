@@ -43,12 +43,14 @@ export default function Input() {
         if(image === "https://via.placeholder.com/300" || prompt === ""){
             alert("select image and write the message")
         }
+        else{
 
         setdata("Loading...");
         
         const res = await fetch("https://image-recognition-chatbot-backend.onrender.com/Analyse" , send)
         const data = await res.text();   
         setdata(data)
+        }
     }
 
     const clear = async()=>{
