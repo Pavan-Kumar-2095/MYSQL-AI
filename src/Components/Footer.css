@@ -1,46 +1,48 @@
-/* src/components/Footer.css */
-.footer {
-    background-color: #282c34;
-    color: white;
-    padding: 20px;
-    margin-top: 250px;
-    text-align: center;
-    border-radius: 25px;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer p {
-    margin: 0;
-    font-size: 0.9em;
-  }
-  
-  .footer-links {
-    margin-top: 10px;
-  }
-  
-  .footer-links a {
-    color: #61dafb;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1em;
-  }
-  
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-  
-  @media screen and (max-width: 690px) {
-    .footer-links a {
-      display: block;
-      margin: 5px 0;
-    }
+/* Footer.css */
 
-    .footer {
-      margin-top: 100px;
-    }
-  }
-  
+/* General styling for the footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the footer content */
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Styling for the paragraph inside the footer */
+.footer-content p {
+  margin: 5px 0;
+}
+
+/* Styling the footer links */
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for footer links */
+.footer-links a:hover {
+  color: #0056b3;
+}
+
+.footer-links a:active {
+  color: #003c8f;
+}

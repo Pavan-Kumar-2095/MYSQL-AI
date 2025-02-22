@@ -1,179 +1,121 @@
-/* Base Styles */
-* {
+/* Input.css */
+
+/* General page styling */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #1a1a1a; /* Dark background for a sleek look */
+  color: #e0e0e0; /* Lighter text color for readability */
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #C4E0F9; /* Very Light Blue background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-}
-
-/* Main container */
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to right, #2EC0F9, #67AAF9); /* Gradient from Bright Sky Blue to Light Sky Blue */
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
+  padding: 40px;
 }
 
-/* Input Section */
 .input {
-  width: 100%;
-  text-align: center;
+  background-color: #2a2a2a; /* Darker background for the input section */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
+  width: 80%;
+  max-width: 800px;
+  margin-bottom: 30px;
 }
 
-.img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+.input-group {
   margin-bottom: 20px;
-  border: 5px solid #fff; /* White border around image */
 }
 
-/* File Input */
-input[type="file"] {
+.input-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
   display: block;
-  margin: 20px auto;
-  font-size: 16px;
-  background-color: #fff; /* White background */
-  border: 2px solid #2EC0F9; /* Bright Sky Blue border */
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  color: #fff; /* White text for labels */
 }
 
-input[type="file"]:hover {
-  background-color: #9BBDF9; /* Light Blue background on hover */
-}
-
-/* Prompt Input */
-.prompt input {
+.input-group input {
   width: 100%;
-  max-width: 80%;
   padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #444; /* Dark border for inputs */
+  border-radius: 8px;
   font-size: 16px;
-  margin-bottom: 20px;
-  border: 2px solid #2EC0F9; /* Bright Sky Blue border */
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  background-color: #333; /* Dark input background */
+  color: #e0e0e0; /* Lighter text inside input fields */
 }
 
-.prompt input:focus {
+.input-group input:focus {
+  border-color: #ff9800; /* Orange border on focus */
   outline: none;
-  border-color: #67AAF9; /* Light Sky Blue border on focus */
 }
 
-/* Buttons */
-button {
-  background-color: #B95F89; /* Muted Pink button background */
-  color: white;
-  padding: 12px 25px;
-  margin: 5px;
+.button {
+  background-color: #333; /* Dark background for buttons */
+  color: #fff; /* White text */
   border: none;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  margin-right: 12px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #9BBDF9; /* Light Blue background on hover */
-  transform: scale(1.05);
+.button:hover {
+  background-color: #ff9800; /* Orange hover effect */
 }
 
-button:active {
-  background-color: #67AAF9; /* Light Sky Blue when active */
+.output {
+  background-color: #2a2a2a; /* Dark background for output section */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 800px;
 }
 
-/* Output Section */
-.output p {
-  font-size: 18px;
-  color: #212121; /* Dark Gray text for readability */
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  background-color: #fff; /* White background for output */
-  padding: 20px;
+.output-result {
+  margin-bottom: 25px;
+}
+
+.output-result pre {
+  background-color: #1e1e1e; /* Slightly darker background for results */
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 70px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 16px;
+  color: #e0e0e0; /* Light text inside result */
+  max-height: 400px;
+  overflow-y: auto;
 }
 
-/* Mobile Specific Styles */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc; /* Light grey color for footer */
+  opacity: 0.7;
+}
+
+/* Add media query for smaller screens */
 @media (max-width: 768px) {
   .main {
     padding: 15px;
-    margin-top: 500px;
   }
 
-  .img {
-    max-width: 90%;
-  }
-
-  .prompt input {
-    width: 100%;
-    max-width: none;
-  }
-
-  button {
-    width: 100%;
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .output p {
-    font-size: 16px;
-  }
-}
-
-/* Desktop Specific Styles */
-@media (min-width: 769px) {
-  .main {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 30px;
-  }
-
-  .input {
-    width: 45%;
-  }
-
+  .input,
   .output {
-    width: 45%;
-  }
-
-  .img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 30px;
-  }
-
-  .prompt input {
     width: 100%;
-    max-width: none;
+    margin-bottom: 20px;
   }
 
-  button {
-    width: auto;
-    font-size: 16px;
-    padding: 15px 30px;
-  }
-
-  .output p {
-    font-size: 18px;
+  .button {
+    width: 100%;
+    margin-top: 15px;
   }
 }
-
-
