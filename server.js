@@ -8,18 +8,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const genAI = new GoogleGenerativeAI("AIzaSyAjHwUezAl-I-JmzVokQ7TpIE0V8Y9Y1YY"); // Use environment variable
+const genAI = new GoogleGenerativeAI(process.env.KEY); // Use environment variable
 
 
 var host1 = "localhost";
 var user1 = "root"; 
 var pass1 = "mufasa@123";
 var database = "company_db"
+
 const connection = mysql.createPool({
-    host: process.env.DB_HOST || host1 , // Use env vars for db config
-    user: process.env.DB_USER || user1 ,
-    password: process.env.DB_PASSWORD || pass1,
-    database: process.env.DB_DATABASE || database,
+    host: host1 , // Use env vars for db config
+    user: user1 ,
+    password: pass1,
+    database: database,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
