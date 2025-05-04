@@ -114,16 +114,17 @@ export default function Input() {
 
   // Clear the inputs and results
   const clear = () => {
-    setDatabaseName("");
+    // setDatabaseName("");
     setQuery("");
-    setHost("");
-    setUsername("");
-    setPassword("");
+    // setHost("");
+    // setUsername("");
+    // setPassword("");
     setData("");
   };
 
   return (
     <div className="main">
+      {/* Sidebar Inputs */}
       <div className="input">
         <div className="input-group">
           <label>Host:</label>
@@ -135,7 +136,7 @@ export default function Input() {
             required
           />
         </div>
-
+  
         <div className="input-group">
           <label>Username:</label>
           <input
@@ -146,7 +147,7 @@ export default function Input() {
             required
           />
         </div>
-
+  
         <div className="input-group">
           <label>Password:</label>
           <input
@@ -157,7 +158,7 @@ export default function Input() {
             required
           />
         </div>
-
+  
         <div className="input-group">
           <label>Database Name:</label>
           <input
@@ -168,8 +169,12 @@ export default function Input() {
             required
           />
         </div>
-
-        <div className="input-group">
+  
+      </div>
+  
+      {/* Main Content */}
+      <div className="output">
+        <div className="query-center">
           <label>SQL Query:</label>
           <input
             type="text"
@@ -181,11 +186,12 @@ export default function Input() {
           />
         </div>
 
-        <button onClick={executeQuery} className="button">SEND</button>
-        <button onClick={clear} className="button">CLEAR</button>
-      </div>
+        <div className="button-group">
+          <button onClick={executeQuery} className="button">SEND</button>
+          <button onClick={clear} className="button">CLEAR</button>
+        </div>
 
-      <div className="output">
+  
         <div className="output-result">
           {typeof data === "string" && <pre>{data}</pre>}
           {data && typeof data !== "string" && data}
@@ -194,4 +200,5 @@ export default function Input() {
       </div>
     </div>
   );
+  
 }

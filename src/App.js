@@ -1,4 +1,4 @@
-import Input from "./Components/Input"
+import Input from "./Components/Input";
 // import Update from "./Components/UnderDev"
 
 function App() {

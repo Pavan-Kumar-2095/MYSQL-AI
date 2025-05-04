@@ -48,9 +48,8 @@ async function getColumnNames(databaseName, tableName) {
 
 async function generateSQL(userQuery, tableName, columnNames) {
     try {
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-        const prompt =`Translate the following natural language query into a precise MySQL query. Assume Table: ${tableName}, Columns: ${columnNames}. Output ONLY the raw SQL query, with no additional text, explanations, or special formatting: ${userQuery}
-`;
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+        const prompt =`Translate the following natural language query into a precise MySQL query. Assume Table: ${tableName}, Columns: ${columnNames}. return ONLY the raw query STRICTLY NO PREFIX AND SUFFIX.${userQuery} `;
         const result = await model.generateContent(prompt);
         return result.response.text();
     } catch (error) {
@@ -80,6 +79,8 @@ app.post("/query", async (req, res) => {
         const tableName = tableNames[0];
         const columnNames = await getColumnNames(requestedDatabaseName, tableName);
         const sqlQuery = await generateSQL(userQuery, tableName, columnNames);
+
+        console.log(sqlQuery);
 
         if (!sqlQuery) {
             return res.status(500).json({ error: "Failed to generate SQL query." });
