@@ -1,97 +1,105 @@
-# 🔍 AI-Powered Natural Language to SQL Query System
+# AI-Powered Natural Language to SQL Query System
 
-An intelligent full-stack application that converts **natural language queries into SQL statements**, executes them on a MySQL database, and returns real-time structured results.
+An intelligent full-stack application that converts **natural language queries into SQL statements**, executes them on a MySQL database, and returns structured results in real time.
 
-Powered by **Google Gemini LLM**, this system eliminates the need to manually write SQL queries and makes database interaction conversational.
+Powered by **Google Gemini**, this application enables users to interact with databases using plain English instead of manually writing SQL queries.
 
 ---
-### 🏠 Main Interface
+
+## Application Preview
+
+### Main Interface
+
 ![Main Interface](./public/Demo.jpg)
 
+---
 
-## 🚀 Overview
+# Overview
 
-This project allows users to query a database using plain English.
+This application allows users to query a MySQL database using natural language.
 
-### Example:
-> “Show all products sold in April 2025”
+### Example
 
-The system:
-1. Understands the query using AI (Gemini)
-2. Detects relevant database tables & columns
-3. Generates SQL automatically
-4. Executes it on MySQL
-5. Returns structured results in UI
+> "Show all products sold in April 2025."
+
+The system automatically:
+
+1. Interprets the user's request using Google Gemini.
+2. Detects the relevant database schema.
+3. Generates the corresponding SQL query.
+4. Executes the query on the MySQL database.
+5. Displays the results in a structured table.
 
 ---
 
-## 🧠 Architecture
+# System Architecture
+
+```text
+Natural Language Query
+          │
+          ▼
+React Frontend
+          │
+          ▼
+Node.js + Express Backend
+          │
+          ▼
+Google Gemini API
+(SQL Generation)
+          │
+          ▼
+MySQL Database
+(Query Execution)
+          │
+          ▼
+Structured Results
 ```
-User (Natural Language Query)
-↓
-React Frontend (UI Input Layer)
-↓
-Node.js + Express Backend (API Layer)
-↓
-Google Gemini AI (SQL Generation Engine)
-↓
-MySQL Database (Query Execution)
-↓
-Frontend (Displays Results in Table)
-```
----
 
 ---
 
-## ✨ Features
+# Features
 
-- 🧠 Natural Language → SQL conversion using AI
-- 🗃️ Automatic schema detection (tables + columns)
-- ⚡ Real-time SQL execution
-- 📊 Dynamic table-based results UI
-- 📋 Copy results to clipboard
-- 🔌 Supports multiple databases (runtime selection)
-- 🌐 Full-stack React + Node.js architecture
-- 🔐 Environment-based secure configuration
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- React.js ⚛️
-- CSS
-
-### Backend
-- Node.js 🚀
-- Express.js
-
-### AI Engine
-- Google Gemini API 🤖 (`@google/generative-ai`)
-
-### Database
-- MySQL2 🗃️
+- Natural Language to SQL conversion using Google Gemini
+- Automatic database schema detection (tables and columns)
+- Real-time SQL query execution
+- Dynamic table-based result visualization
+- Copy query results to the clipboard
+- Runtime database selection
+- Full-stack architecture using React and Express
+- Environment-based secure configuration
 
 ---
 
-## 📂 Project Structure
-```
+# Tech Stack
+
+| Component | Technology |
+|----------|------------|
+| Frontend | React.js, HTML5, CSS3 |
+| Backend | Node.js, Express.js |
+| AI Engine | Google Gemini API (`@google/generative-ai`) |
+| Database | MySQL2 |
+
+---
+
+# Project Structure
+
+```text
 project-root/
-│
 ├── public/
-│ ├── favicon.ico
-│ ├── index.html
-│ ├── logo512.png
-│ └── manifest.json
+│   ├── Demo.jpg
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo512.png
+│   └── manifest.json
 │
 ├── src/
-│ ├── Components/
-│ ├── App.js
-│ ├── App.css
-│ ├── index.js
-│ └── index.css
+│   ├── Components/
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
 │
-├── server.js # Backend (Express + Gemini + MySQL)
+├── server.js
 ├── package.json
 ├── package-lock.json
 ├── .gitignore
@@ -100,104 +108,121 @@ project-root/
 
 ---
 
-## 🚀 Features
+# Installation
 
-- 🧠 Convert natural language → SQL using Google Gemini AI
-- 🗃️ Auto-detect database schema (tables & columns)
-- ⚡ Executes SQL queries in real time
-- 📊 Dynamic result rendering in frontend
-- 🌐 Full-stack integration (React + Express)
-- 🔌 Single backend entry (`server.js`)
-- ⚙️ Easy database switching at runtime
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- React.js ⚛️
-- HTML5
-- CSS3
-
-### Backend
-- Node.js 🚀
-- Express.js
-
-### AI Engine
-- Google Gemini API 🤖 (`@google/generative-ai`)
-
-### Database
-- MySQL2 🗃️
-
----
-
-
-## ⚙️ Installation & Setup
-
-### 1️⃣ Clone the repository
+## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Pavan-Kumar-2095/MYSQL-AI/
-cd ai-sql-project
+git clone https://github.com/Pavan-Kumar-2095/MYSQL-AI.git
+cd MYSQL-AI
+```
+
+## 2. Install Dependencies
+
+```bash
 npm install
 ```
-### 2️⃣ Setup environment variables
 
-Create a .env file in the root directory:
-```bash
+## 3. Configure Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
 KEY=your_google_gemini_api_key
 PORT=5000
 ```
-### 3️⃣ Run the application
+
+## 4. Start the Server
+
 ```bash
 node server.js
 ```
-### Server will run at:
 
+The server will be available at:
+
+```
 http://localhost:5000
-
-## 🧪 How to Use
-
-### 1️⃣ Open the Application
-Start the backend server and launch the React UI in your browser.
+```
 
 ---
 
-### 2️⃣ Enter Database Details
+# How to Use
 
-Provide your MySQL credentials:
+## Step 1: Start the Application
 
-- **Host** → `localhost`  
-- **Username** → `root`  
-- **Password** → your MySQL password  
-- **Database** → e.g. `company_db`
+Run the backend server and open the React application in your browser.
 
 ---
 
-### 3️⃣ Enter Natural Language Query
+## Step 2: Connect to Your Database
 
-Type your query in plain English.
+Enter your MySQL connection details:
 
-#### Example Queries:
-
-- Show all employees in sales department  
-- List products sold in April 2025  
-- Get total revenue from orders table  
-- Find top 10 customers by purchase amount  
+- Host (e.g., `localhost`)
+- Username
+- Password
+- Database Name
 
 ---
 
-### 4️⃣ Execute Query
+## Step 3: Enter a Natural Language Query
 
-Click the **SEND** button.
+Examples:
 
-The system will:
-- 🧠 Convert natural language → SQL using AI  
-- ⚙️ Execute SQL on MySQL database  
-- 📊 Display results in a structured table  
+- Show all employees in the Sales department.
+- List products sold in April 2025.
+- Get the total revenue from the orders table.
+- Find the top 10 customers by purchase amount.
 
 ---
 
-### 5️⃣ Copy Results
+## Step 4: Execute the Query
 
-Click the **COPY** button to copy the output data to your clipboard.
+Click the **Send** button.
+
+The application will:
+
+1. Convert the natural language request into SQL.
+2. Execute the generated SQL query.
+3. Display the results in a structured table.
+
+---
+
+## Step 5: Copy Results
+
+Use the **Copy** button to copy the generated output to your clipboard.
+
+---
+
+# Workflow
+
+```text
+User Query
+      │
+      ▼
+Google Gemini
+(Natural Language → SQL)
+      │
+      ▼
+Generated SQL
+      │
+      ▼
+MySQL Database
+      │
+      ▼
+Query Results
+      │
+      ▼
+React Frontend
+```
+
+---
+
+# Applications
+
+- AI-powered database assistants
+- Business intelligence dashboards
+- Internal analytics tools
+- Enterprise data exploration
+- SQL learning assistants
+- Conversational database interfaces
